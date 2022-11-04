@@ -15,7 +15,14 @@ function getAllDirectorsBonus(moviesArray) {
 // 😄 got Set() from : https://dev.to/soyleninjs/3-ways-to-remove-duplicates-in-an-array-in-javascript-259o
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-function howManyMovies(moviesArray) {}
+function howManyMovies(moviesArray) {
+  const spielbergDramaMovies = moviesArray.filter(
+    (movie) =>
+      movie.director === "Steven Spielberg" && movie.genre.includes("Drama")
+  );
+
+  return spielbergDramaMovies.length;
+}
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage(moviesArray) {}
