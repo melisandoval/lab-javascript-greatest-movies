@@ -1,3 +1,4 @@
+//
 // Iteration 1: All directors? - Get the array of all directors.
 
 function getAllDirectors(moviesArray) {
@@ -14,7 +15,9 @@ function getAllDirectorsBonus(moviesArray) {
 
 // 😄 got Set() from : https://dev.to/soyleninjs/3-ways-to-remove-duplicates-in-an-array-in-javascript-259o
 
+//
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
+
 function howManyMovies(moviesArray) {
   const spielbergDramaMovies = moviesArray.filter(
     (movie) =>
@@ -24,29 +27,37 @@ function howManyMovies(moviesArray) {
   return spielbergDramaMovies.length;
 }
 
+//
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
+
 function scoresAverage(moviesArray) {
   if (!moviesArray.length) {
     return 0;
   }
 
-  moviesArray.forEach((movie) => {
-    if (movie.score === "" || !movie.score) {
-      movie.score = 0;
-    }
-  });
+  // moviesArray.forEach((movie) => {
+  //   if (movie.score === "" || !movie.score) {
+  //     movie.score = 0;
+  //   }
+  // });
 
   const averageScore =
-    moviesArray.reduce((a, b) => a + b.score, 0) / moviesArray.length;
+    moviesArray.reduce((a, b) => a + (b.score || 0), 0) / moviesArray.length;
 
   return Number(averageScore.toFixed(2));
 }
 
-// const testArr = [{ score: 6 }, { score: "" }, {}];
-// console.log(scoresAverage(testArr));
+const testArr = [{ score: 6 }, { score: "" }, {}];
+console.log(scoresAverage(testArr));
 
+//
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore(moviesArray) {}
+
+function dramaMoviesScore(moviesArray) {
+  if (!moviesArray.length) {
+    return 0;
+  }
+}
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(moviesArray) {}
