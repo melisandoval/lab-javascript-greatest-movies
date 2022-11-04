@@ -31,15 +31,7 @@ function howManyMovies(moviesArray) {
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 
 function scoresAverage(moviesArray) {
-  if (!moviesArray.length) {
-    return 0;
-  }
-
-  // moviesArray.forEach((movie) => {
-  //   if (movie.score === "" || !movie.score) {
-  //     movie.score = 0;
-  //   }
-  // });
+  if (!moviesArray.length) return 0;
 
   const averageScore =
     moviesArray.reduce((a, b) => a + (b.score || 0), 0) / moviesArray.length;
@@ -47,8 +39,22 @@ function scoresAverage(moviesArray) {
   return Number(averageScore.toFixed(2));
 }
 
+/*
+previous code inside the function instead of (b.score || 0) 
+for the test "should return average even if 
+one of the movies does not have score":
+
+(before calculating the average):
+
+moviesArray.forEach((movie) => {
+  if (movie.score === "" || !movie.score) {
+    movie.score = 0;
+  }
+});
+
 const testArr = [{ score: 6 }, { score: "" }, {}];
 console.log(scoresAverage(testArr));
+*/
 
 //
 // Iteration 4: Drama movies - Get the average of Drama Movies
