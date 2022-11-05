@@ -97,8 +97,7 @@ function orderAlphabetically(moviesArray) {
     .slice(0, 20)
     .map((movie) => movie.title);
 }
-
-console.log(orderAlphabetically(movies));
+// console.log(orderAlphabetically(movies));
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 function turnHoursToMinutes(moviesArray) {}
